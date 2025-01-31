@@ -1,4 +1,4 @@
-package com.example.Payroll.Employee;
+package com.example.payroll.Employee;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -12,25 +12,25 @@ public class EmployeeController {
         this.repository = repository;
     }
 
-    //Aggregate root
-    //tag::get-aggregate root
+    // Aggregate root
+    // tag::get-aggregate root
     @GetMapping("/employees")
     List<Employee> all() {
         return repository.findAll();
     }
 
     @PostMapping("/employees")
-    Employee newEmployee(@RequestBody Employee newEmployee){
+    Employee newEmployee(@RequestBody Employee newEmployee) {
         return repository.save(newEmployee);
     }
 
-    //single item
+    // single item
     @GetMapping("/employees/{id}")
     Employee one(@PathVariable Long id) {
         return repository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
-    @PutMapping("/employee/{id}")
+    @PutMapping("/employees/{id}")
     Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
         return repository.findById(id).map(
                 employee -> {
@@ -43,7 +43,7 @@ public class EmployeeController {
                 });
     }
 
-    @DeleteMapping("/employee/{id}")
+    @DeleteMapping("/employees/{id}")
     void deleteEmployee(@PathVariable Long id) {
         repository.deleteById(id);
     }

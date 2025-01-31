@@ -1,7 +1,7 @@
-package com.example.Payroll;
+package com.example.payroll;
 
-import com.example.Payroll.Employee.Employee;
-import com.example.Payroll.Employee.EmployeeRepository;
+import com.example.payroll.Employee.Employee;
+import com.example.payroll.Employee.EmployeeRepository;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

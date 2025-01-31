@@ -1,4 +1,4 @@
-package com.example.Payroll.Employee;
+package com.example.payroll.Employee;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,12 +8,12 @@ import java.util.Objects;
 
 @Entity
 public class Employee {
-    private @Id
-    @GeneratedValue long id;
+    private @Id @GeneratedValue long id;
     private String name;
     private String role;
 
-    Employee() {}
+    Employee() {
+    }
 
     public Employee(String name, String role) {
         this.name = name;
@@ -45,13 +45,14 @@ public class Employee {
     }
 
     @Override
-    public boolean equals(Object o){
-        if(this == o)
+    public boolean equals(Object o) {
+        if (this == o)
             return true;
-        if(!(o instanceof Employee))
+        if (!(o instanceof Employee))
             return false;
         Employee employee = (Employee) o;
-        return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name) && Objects.equals(this.role, employee.role);
+        return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name)
+                && Objects.equals(this.role, employee.role);
     }
 
     @Override

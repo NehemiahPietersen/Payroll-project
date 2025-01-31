@@ -1,6 +1,6 @@
-package com.example.Payroll.Employee;
+package com.example.payroll.Employee;
 
-public class EmployeeNotFoundException extends RuntimeException{
+public class EmployeeNotFoundException extends RuntimeException {
     EmployeeNotFoundException(Long id) {
         super("Could not find Employee" + id);
     }
