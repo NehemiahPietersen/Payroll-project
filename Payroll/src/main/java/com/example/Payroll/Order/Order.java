@@ -1,6 +1,7 @@
 package com.example.payroll.Order;
 
 import com.example.payroll.Status;
+import jakarta.persistence.Id;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
@@ -10,8 +11,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "CUSTOMER_ORDER")
 public class Order {
-    private @id
-    @GeneratedValue Long id;
+    private @Id @GeneratedValue Long id;
     private String description;
     private Status status;
 
