@@ -9,7 +9,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "CUSTOMER_ORDER")
-class Order {
+public class Order {
     private @id
     @GeneratedValue Long id;
     private String description;
@@ -17,7 +17,7 @@ class Order {
 
     Order() {}
 
-    Order(String description, Status status) {
+    public Order(String description, Status status) {
         this.description = description;
         this.status = status;
     }
